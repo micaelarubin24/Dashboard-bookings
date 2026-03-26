@@ -1,5 +1,6 @@
 # dependencies
 node_modules/
+jspm_packages/
 
 # Next.js
 .next/
@@ -7,14 +8,13 @@ out/
 
 # build
 build/
+build/Release
 dist/
 
 # env files
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+!.env.example
 
 # Vercel
 .vercel
@@ -24,6 +24,35 @@ dist/
 Thumbs.db
 
 # logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
+
+# coverage
+coverage
+*.lcov
+.nyc_output
+
+# cache
+.npm
+.eslintcache
+.stylelintcache
+.cache
+.parcel-cache
+
+# misc
+*.tsbuildinfo
+*.tgz
+.yarn-integrity
+.node_repl_history
+.tern-port
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
