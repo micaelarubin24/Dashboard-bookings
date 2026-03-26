@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(python3:*)",
+      "Bash(py --version)",
+      "Bash(py:*)",
+      "Bash(PYTHONIOENCODING=utf-8 py scripts/convert_csv.py \"C:/Users/micaela.rubin/Desktop/Bajadas de Reservas/bajada-25-3-5pm.csv\" 2>&1)"
+    ]
+  }
+}

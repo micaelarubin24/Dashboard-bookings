@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #f4f5f7; color: #11161c; }
+select, input, button { font-family: inherit; }
+button:disabled { opacity: 0.35; cursor: default !important; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f4f5f7; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+/* ── Header ── */
+.header-root {
+  background: #11161c;
+  padding: 0 48px;
+  min-height: 68px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+.header-left        { display: flex; align-items: stretch; }
+.header-logo-area   { display: flex; align-items: center; padding-right: 32px; border-right: 1px solid rgba(255,255,255,0.08); }
+.header-logo-sub    { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-top: 5px; }
+.header-tabs        { display: flex; align-items: stretch; margin-left: 8px; }
+.header-right       { display: flex; align-items: center; font-size: 12px; color: rgba(255,255,255,0.45); gap: 6px; }
+
+/* ── Layout ── */
+.main-pad { padding: 24px 32px; max-width: 1800px; margin: 0 auto; }
+
+.grid-stats    { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 20px; }
+.grid-filters  { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.grid-2-1      { display: grid; grid-template-columns: 2fr 1fr;        gap: 16px; margin-bottom: 16px; }
+.grid-3-2      { display: grid; grid-template-columns: 3fr 2fr;        gap: 16px; margin-bottom: 16px; }
+.grid-3, .grid-donuts-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
+.grid-donuts-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 16px; }
+.grid-2-equal  { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.donut-wide-card { display: flex; gap: 20px; align-items: center; }
+.table-scroll  { overflow-x: auto; }
+
+/* ── Table ── */
+.dash-table th, .dash-table td { padding: 10px 14px; }
+.pagination-info { font-size: 13px; }
+
+/* ── Tooltip hover (InsightsPanel) ── */
+.tooltip-trigger:hover .tooltip-box { display: block !important; }
+
+/* ── Scroll horizontal para charts complejos en mobile ── */
+.chart-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* ── Responsive: tablet / mobile ── */
+@media (max-width: 900px) {
+  .header-root      { padding: 0 16px; min-height: 56px; }
+  .header-logo-area { padding-right: 16px; }
+  .header-logo-img  { height: 20px !important; }
+  .header-logo-sub  { display: none; }
+  .header-right     { font-size: 11px; gap: 4px; }
+  .header-right .header-updated-label { display: none; }
+  .header-right .header-logout { display: none; }
+
+  .main-pad    { padding: 12px 14px; }
+  .grid-stats  { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 14px; }
+  .grid-filters{ grid-template-columns: repeat(2, 1fr); }
+  .grid-2-1, .grid-3-2, .grid-3, .grid-donuts-3, .grid-donuts-2, .grid-2-equal { grid-template-columns: 1fr; }
+
+  .donut-wide-card { flex-direction: column; align-items: stretch; }
+  .donut-wide-card .donut-chart-col { width: 100% !important; }
+
+  .dash-table th, .dash-table td { padding: 8px 10px; font-size: 12px; }
+  .pagination-info { display: none; }
+
+  .col-hora, .col-aprobado, .col-viaje { display: none; }
+
+  /* Ocultar Sankey en mobile — demasiado complejo para pantalla chica */
+  .sankey-section { display: none; }
+}
+
+@media (max-width: 600px) {
+  .header-root  { padding: 0 12px; }
+  .header-tabs button { padding: 0 14px !important; font-size: 12px !important; }
+  .grid-filters { grid-template-columns: 1fr; }
+  .grid-stats   { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  /* Stat cards en 1 col si son muy pocas */
+  .grid-stats-1col { grid-template-columns: 1fr !important; }
+  /* USD total card en columna */
+  .usd-total-card { flex-direction: column !important; gap: 16px !important; }
+  .usd-total-card .usd-divider { display: none; }
+}

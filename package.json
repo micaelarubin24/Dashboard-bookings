@@ -1,0 +1,18 @@
+{
+  "name": "reservas-dashboard",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "update-data": "python3 scripts/convert.py"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "recharts": "^3.8.0",
+    "xlsx": "^0.18.5"
+  }
+}
