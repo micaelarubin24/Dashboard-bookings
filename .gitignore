@@ -46,6 +46,9 @@ coverage
 # csv uploads
 csv uploads/
 
+# scripts locales (credenciales / temporales)
+local/
+
 # misc
 *.tsbuildinfo
 *.tgz
