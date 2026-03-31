@@ -43,6 +43,9 @@ coverage
 .cache
 .parcel-cache
 
+# csv uploads
+csv uploads/
+
 # misc
 *.tsbuildinfo
 *.tgz
